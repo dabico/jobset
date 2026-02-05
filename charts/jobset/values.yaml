@@ -41,6 +41,8 @@ controller:
     qps: 500
     # --  Burst allows extra queries to accumulate when a client is exceeding its rate.
     burst: 500
+  # -- Annotations to add to the jobset controller deployment.
+  annotations: {}
   # -- Environment variables of the jobset controller container.
   env: []
   # -- Environment variable sources of the jobset controller container.

@@ -32,6 +32,9 @@ spec:
         {{- include "jobset.controller.labels" . | nindent 8 }}
       annotations:
         jobset.x-k8s.io/config-hash: {{ include (print $.Template.BasePath "/controller/configmap.yaml") . | sha256sum }}
+        {{- with .Values.controller.annotations }}
+        {{- toYaml . | nindent 8 }}
+        {{- end }}
     spec:
       containers:
       - name: controller
